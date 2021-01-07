@@ -1,0 +1,665 @@
+{
+  "ReadyEvent": [
+    "Indicates that JDA finished loading all entities.",
+    "Before this event was fired all entity related functions were not guaranteed to work as expected.",
+    "Can be used to indicate when JDA finished populating internal objects and is ready to be used.",
+    "When this is fired all available entities are cached and accessible."
+  ],
+  "RawGatewayEvent": [
+    "Wrapper for the raw dispatch event received from discord. This provides the raw structure of a gateway event through a DataObject instance containing:",
+    "d: The payload of the package (DataObject)",
+    "t: The type of the package (String)",
+    "op: The opcode of the package, always 0 for dispatch (int)",
+    "s: The sequence number, equivalent to getResponseNumber() (long)",
+    "Sent after derived events. This is disabled by default and can be enabled through either the JDABuilder or DefaultShardManagerBuilder."
+  ],
+  "GatewayPingEvent": [
+    "Indicates that the gateway ping has been updated by the heartbeat cycle.",
+    "You can always get the last ping update with JDA.getGatewayPing().",
+    "Can be used to detect changes to the gateway ping."
+  ],
+  "ResumedEvent": [
+    "Indicates that JDA successfully resumed its connection to the gateway.",
+    "All Objects are still in place and events are replayed.",
+    "Can be used to marks the continuation of event flow stopped by the DisconnectEvent."
+  ],
+  "ReconnectedEvent": [
+    "Indicates if JDA successfully re-established its connection to the gateway.",
+    "All Objects have been replaced when this is fired and events were likely missed in the downtime.",
+    "Can be used to mark the continuation of event flow which was stopped by the DisconnectEvent.",
+    "User should replace any cached Objects (like User/Guild objects)."
+  ],
+  "DisconnectEvent": [
+    "Indicates that JDA has been disconnected from the remote server.",
+    "When this event is fired JDA will try to reconnect if possible unless  JDABuilder.setAutoReconnect(Boolean) has been provided false or the disconnect was too fatal in which case a ShutdownEvent is fired.",
+    "When reconnecting was successful either a ReconnectEvent or ResumedEvent is fired."
+  ],
+  "ShutdownEvent": [
+    "Indicates that JDA has fully disconnected from Discord and will not attempt to reconnect again.",
+    "At this stage all internal cache is invalid!"
+  ],
+  "StatusChangeEvent": [
+    "",
+    ""
+  ],
+  "ExceptionEvent": [
+    "",
+    ""
+  ],
+  "UserUpdateNameEvent": [
+    "",
+    ""
+  ],
+  "UserUpdateDiscriminatorEvent": [
+    "",
+    ""
+  ],
+  "UserUpdateAvatarEvent": [
+    "",
+    ""
+  ],
+  "UserUpdateOnlineStatusEvent": [
+    "",
+    ""
+  ],
+  "UserUpdateActivityOrderEvent": [
+    "",
+    ""
+  ],
+  "UserUpdateFlagsEvent": [
+    "",
+    ""
+  ],
+  "UserTypingEvent": [
+    "",
+    ""
+  ],
+  "UserActivityStartEvent": [
+    "",
+    ""
+  ],
+  "UserActivityEndEvent": [
+    "",
+    ""
+  ],
+  "SelfUpdateAvatarEvent": [
+    "",
+    ""
+  ],
+  "SelfUpdateMFAEvent": [
+    "",
+    ""
+  ],
+  "SelfUpdateNameEvent": [
+    "",
+    ""
+  ],
+  "SelfUpdateVerifiedEvent": [
+    "",
+    ""
+  ],
+  "GuildMessageReceivedEvent": [
+    "",
+    ""
+  ],
+  "GuildMessageUpdateEvent": [
+    "",
+    ""
+  ],
+  "GuildMessageDeleteEvent": [
+    "",
+    ""
+  ],
+  "GuildMessageEmbedEvent": [
+    "",
+    ""
+  ],
+  "GuildMessageReactionAddEvent": [
+    "",
+    ""
+  ],
+  "GuildMessageReactionRemoveEvent": [
+    "",
+    ""
+  ],
+  "GuildMessageReactionRemoveAllEvent": [
+    "",
+    ""
+  ],
+  "GuildMessageReactionRemoveEmoteEvent": [
+    "",
+    ""
+  ],
+  "PrivateMessageReceivedEvent": [
+    "",
+    ""
+  ],
+  "PrivateMessageUpdateEvent": [
+    "",
+    ""
+  ],
+  "PrivateMessageDeleteEvent": [
+    "",
+    ""
+  ],
+  "PrivateMessageEmbedEvent": [
+    "",
+    ""
+  ],
+  "PrivateMessageReactionAddEvent": [
+    "",
+    ""
+  ],
+  "PrivateMessageReactionRemoveEvent": [
+    "",
+    ""
+  ],
+  "MessageReceivedEvent": [
+    "",
+    ""
+  ],
+  "MessageUpdateEvent": [
+    "",
+    ""
+  ],
+  "MessageDeleteEvent": [
+    "",
+    ""
+  ],
+  "MessageBulkDeleteEvent": [
+    "",
+    ""
+  ],
+  "MessageEmbedEvent": [
+    "",
+    ""
+  ],
+  "MessageReactionAddEvent": [
+    "",
+    ""
+  ],
+  "MessageReactionRemoveEvent": [
+    "",
+    ""
+  ],
+  "MessageReactionRemoveAllEvent": [
+    "",
+    ""
+  ],
+  "MessageReactionRemoveEmoteEvent": [
+    "",
+    ""
+  ],
+  "PermissionOverrideDeleteEvent": [
+    "",
+    ""
+  ],
+  "PermissionOverrideUpdateEvent": [
+    "",
+    ""
+  ],
+  "PermissionOverrideCreateEvent": [
+    "",
+    ""
+  ],
+  "StoreChannelDeleteEvent": [
+    "",
+    ""
+  ],
+  "StoreChannelUpdateNameEvent": [
+    "",
+    ""
+  ],
+  "StoreChannelUpdatePositionEvent": [
+    "",
+    ""
+  ],
+  "StoreChannelCreateEvent": [
+    "",
+    ""
+  ],
+  "TextChannelDeleteEvent": [
+    "",
+    ""
+  ],
+  "TextChannelUpdateNameEvent": [
+    "",
+    ""
+  ],
+  "TextChannelUpdateTopicEvent": [
+    "",
+    ""
+  ],
+  "TextChannelUpdatePositionEvent": [
+    "",
+    ""
+  ],
+  "TextChannelUpdateNSFWEvent": [
+    "",
+    ""
+  ],
+  "TextChannelUpdateParentEvent": [
+    "",
+    ""
+  ],
+  "TextChannelUpdateSlowmodeEvent": [
+    "",
+    ""
+  ],
+  "TextChannelCreateEvent": [
+    "",
+    ""
+  ],
+  "VoiceChannelDeleteEvent": [
+    "",
+    ""
+  ],
+  "VoiceChannelUpdateNameEvent": [
+    "",
+    ""
+  ],
+  "VoiceChannelUpdatePositionEvent": [
+    "",
+    ""
+  ],
+  "VoiceChannelUpdateUserLimitEvent": [
+    "",
+    ""
+  ],
+  "VoiceChannelUpdateBitrateEvent": [
+    "",
+    ""
+  ],
+  "VoiceChannelUpdateParentEvent": [
+    "",
+    ""
+  ],
+  "VoiceChannelCreateEvent": [
+    "",
+    ""
+  ],
+  "CategoryDeleteEvent": [
+    "",
+    ""
+  ],
+  "CategoryUpdateNameEvent": [
+    "",
+    ""
+  ],
+  "CategoryUpdatePositionEvent": [
+    "",
+    ""
+  ],
+  "CategoryCreateEvent": [
+    "",
+    ""
+  ],
+  "PrivateChannelCreateEvent": [
+    "",
+    ""
+  ],
+  "PrivateChannelDeleteEvent": [
+    "",
+    ""
+  ],
+  "GuildReadyEvent": [
+    "",
+    ""
+  ],
+  "GuildJoinEvent": [
+    "",
+    ""
+  ],
+  "GuildLeaveEvent": [
+    "",
+    ""
+  ],
+  "GuildAvailableEvent": [
+    "",
+    ""
+  ],
+  "GuildUnavailableEvent": [
+    "",
+    ""
+  ],
+  "UnavailableGuildJoinedEvent": [
+    "",
+    ""
+  ],
+  "UnavailableGuildLeaveEvent": [
+    "",
+    ""
+  ],
+  "GuildBanEvent": [
+    "",
+    ""
+  ],
+  "GuildUnbanEvent": [
+    "",
+    ""
+  ],
+  "GuildMemberRemoveEvent": [
+    "",
+    ""
+  ],
+  "GuildUpdateAfkChannelEvent": [
+    "",
+    ""
+  ],
+  "GuildUpdateSystemChannelEvent": [
+    "",
+    ""
+  ],
+  "GuildUpdateAfkTimeoutEvent": [
+    "",
+    ""
+  ],
+  "GuildUpdateExplicitContentLevelEvent": [
+    "",
+    ""
+  ],
+  "GuildUpdateIconEvent": [
+    "",
+    ""
+  ],
+  "GuildUpdateMFALevelEvent": [
+    "",
+    ""
+  ],
+  "GuildUpdateNameEvent": [
+    "",
+    ""
+  ],
+  "GuildUpdateNotificationLevelEvent": [
+    "",
+    ""
+  ],
+  "GuildUpdateOwnerEvent": [
+    "",
+    ""
+  ],
+  "GuildUpdateRegionEvent": [
+    "",
+    ""
+  ],
+  "GuildUpdateSplashEvent": [
+    "",
+    ""
+  ],
+  "GuildUpdateVerificationLevelEvent": [
+    "",
+    ""
+  ],
+  "GuildUpdateFeaturesEvent": [
+    "",
+    ""
+  ],
+  "GuildUpdateVanityCodeEvent": [
+    "",
+    ""
+  ],
+  "GuildUpdateBannerEvent": [
+    "",
+    ""
+  ],
+  "GuildUpdateDescriptionEvent": [
+    "",
+    ""
+  ],
+  "GuildUpdateBoostTierEvent": [
+    "",
+    ""
+  ],
+  "GuildUpdateBoostCountEvent": [
+    "",
+    ""
+  ],
+  "GuildUpdateMaxMembersEvent": [
+    "",
+    ""
+  ],
+  "GuildUpdateMaxPresencesEvent": [
+    "",
+    ""
+  ],
+  "GuildInviteCreateEvent": [
+    "",
+    ""
+  ],
+  "GuildInviteDeleteEvent": [
+    "",
+    ""
+  ],
+  "GuildMemberJoinEvent": [
+    "",
+    ""
+  ],
+  "GuildMemberRoleAddEvent": [
+    "",
+    ""
+  ],
+  "GuildMemberRoleRemoveEvent": [
+    "",
+    ""
+  ],
+  "GuildMemberUpdateNicknameEvent": [
+    "",
+    ""
+  ],
+  "GuildMemberUpdateBoostTimeEvent": [
+    "",
+    ""
+  ],
+  "GuildVoiceUpdateEvent": [
+    "",
+    ""
+  ],
+  "GuildVoiceJoinEvent": [
+    "",
+    ""
+  ],
+  "GuildVoiceMoveEvent": [
+    "",
+    ""
+  ],
+  "GuildVoiceLeaveEvent": [
+    "",
+    ""
+  ],
+  "GuildVoiceMuteEvent": [
+    "",
+    ""
+  ],
+  "GuildVoiceDeafenEvent": [
+    "",
+    ""
+  ],
+  "GuildVoiceGuildMuteEvent": [
+    "",
+    ""
+  ],
+  "GuildVoiceGuildDeafenEvent": [
+    "",
+    ""
+  ],
+  "GuildVoiceSelfMuteEvent": [
+    "",
+    ""
+  ],
+  "GuildVoiceSelfDeafenEvent": [
+    "",
+    ""
+  ],
+  "GuildVoiceSuppressEvent": [
+    "",
+    ""
+  ],
+  "GuildVoiceStreamEvent": [
+    "",
+    ""
+  ],
+  "RoleCreateEvent": [
+    "",
+    ""
+  ],
+  "RoleDeleteEvent": [
+    "",
+    ""
+  ],
+  "RoleUpdateColorEvent": [
+    "",
+    ""
+  ],
+  "RoleUpdateHoistedEvent": [
+    "",
+    ""
+  ],
+  "RoleUpdateMentionableEvent": [
+    "",
+    ""
+  ],
+  "RoleUpdateNameEvent": [
+    "",
+    ""
+  ],
+  "RoleUpdatePermissionsEvent": [
+    "",
+    ""
+  ],
+  "RoleUpdatePositionEvent": [
+    "",
+    ""
+  ],
+  "EmoteAddedEvent": [
+    "",
+    ""
+  ],
+  "EmoteRemovedEvent": [
+    "",
+    ""
+  ],
+  "EmoteUpdateNameEvent": [
+    "",
+    ""
+  ],
+  "EmoteUpdateRolesEvent": [
+    "",
+    ""
+  ],
+  "HttpRequestEvent": [
+    "",
+    ""
+  ],
+  "GenericMessageEvent": [
+    "",
+    ""
+  ],
+  "GenericMessageReactionEvent": [
+    "",
+    ""
+  ],
+  "GenericGuildMessageEvent": [
+    "",
+    ""
+  ],
+  "GenericGuildMessageReactionEvent": [
+    "",
+    ""
+  ],
+  "GenericPrivateMessageEvent": [
+    "",
+    ""
+  ],
+  "GenericPrivateMessageReactionEvent": [
+    "",
+    ""
+  ],
+  "GenericUserEvent": [
+    "",
+    ""
+  ],
+  "GenericUserPresenceEvent": [
+    "",
+    ""
+  ],
+  "GenericSelfUpdateEvent": [
+    "",
+    ""
+  ],
+  "GenericStoreChannelEvent": [
+    "",
+    ""
+  ],
+  "GenericStoreChannelUpdateEvent": [
+    "",
+    ""
+  ],
+  "GenericTextChannelEvent": [
+    "",
+    ""
+  ],
+  "GenericTextChannelUpdateEvent": [
+    "",
+    ""
+  ],
+  "GenericVoiceChannelEvent": [
+    "",
+    ""
+  ],
+  "GenericVoiceChannelUpdateEvent": [
+    "",
+    ""
+  ],
+  "GenericCategoryEvent": [
+    "",
+    ""
+  ],
+  "GenericCategoryUpdateEvent": [
+    "",
+    ""
+  ],
+  "GenericGuildEvent": [
+    "",
+    ""
+  ],
+  "GenericGuildUpdateEvent": [
+    "",
+    ""
+  ],
+  "GenericGuildInviteEvent": [
+    "",
+    ""
+  ],
+  "GenericGuildMemberEvent": [
+    "",
+    ""
+  ],
+  "GenericGuildMemberUpdateEvent": [
+    "",
+    ""
+  ],
+  "GenericGuildVoiceEvent": [
+    "",
+    ""
+  ],
+  "GenericRoleEvent": [
+    "",
+    ""
+  ],
+  "GenericRoleUpdateEvent": [
+    "",
+    ""
+  ],
+  "GenericEmoteEvent": [
+    "",
+    ""
+  ],
+  "GenericEmoteUpdateEvent": [
+    "",
+    ""
+  ],
+  "GenericPermissionOverrideEvent": [
+    "",
+    ""
+  ]
+}
